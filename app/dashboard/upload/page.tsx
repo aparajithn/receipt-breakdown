@@ -127,15 +127,16 @@ export default function UploadPage() {
                 />
                 <div className="flex gap-4 justify-center">
                   <label>
-                    <Button variant="outline" asChild>
-                      <span>Change Image</span>
-                    </Button>
                     <Input
                       type="file"
                       accept="image/*"
                       onChange={handleFileChange}
                       className="hidden"
+                      id="file-change"
                     />
+                    <Button variant="outline" type="button" onClick={() => document.getElementById('file-change')?.click()}>
+                      Change Image
+                    </Button>
                   </label>
                   <Button
                     onClick={handleSubmit}
@@ -157,15 +158,16 @@ export default function UploadPage() {
                 </p>
                 <p className="text-gray-600 mb-4">or</p>
                 <label>
-                  <Button asChild>
-                    <span>Choose File</span>
-                  </Button>
                   <Input
                     type="file"
                     accept="image/*"
                     onChange={handleFileChange}
                     className="hidden"
+                    id="file-input"
                   />
+                  <Button type="button" onClick={() => document.getElementById('file-input')?.click()}>
+                    Choose File
+                  </Button>
                 </label>
                 <p className="text-sm text-gray-500 mt-4">
                   Supports JPEG, PNG (max 10MB)
